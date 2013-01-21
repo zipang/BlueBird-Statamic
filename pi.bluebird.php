@@ -63,15 +63,15 @@ class Plugin_bluebird extends Plugin {
 									$tweetText = str_replace($find,$replace,$tweetText);
 								}
 							}
-							
-						
+											
 						$tweet['text'] = $tweetText;
-						
+						$tweet['tweet_url'] = "https://twitter.com/" . $tweet['user']['screen_name'] . "/status/" . $tweet['id'];
+				
 						array_push($output["tweets"], $tweet);
-						array_push($output["user"], $tweet['user']);						
+						array_push($output["user"], $tweet['user']);
+						
 					}				
-					
-					
+										
 					for ($i = 1; $i <= $count; $i++) {
 						unset($output["user"][$i]);
 					}
@@ -81,6 +81,7 @@ class Plugin_bluebird extends Plugin {
         	return $output;
         
         }
+        
         return false;
     }
 
@@ -109,8 +110,3 @@ function theNest($d) {
 		return $d;
 	}
 }
-
-
-
-
-

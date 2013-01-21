@@ -9,7 +9,7 @@
 				<p>{{ text }}</p>
 				<p>
 					<small>
-						<a href="https://twitter.com/{{ user:screen_name }}/status/{{ id }}">{{ created_at format="F jS, Y" }}</a>
+						<a href="{{ tweet_url }}">{{ created_at format="F jS, Y" }}</a>
 					</small>
 				</p>
 			</div>
@@ -38,6 +38,7 @@ The {{ tweets }} tag pair allows you access to everything in the Twitter API. Us
 * {{ id }} - ID of the tweet in number format
 * {{ id_str }} - ID of the tweet in string format
 * {{ text }} - Actual tweet
+* {{ tweet_url }} - a pre-built URL for each tweet
 * {{ source }} - Client used for the tweet
 * {{ retweet_count }} - Amount of times the tweet has been retweeted
 * {{ favorited }} - Amount of times the tweet has been favorited
