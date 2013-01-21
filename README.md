@@ -17,7 +17,7 @@
 		{{ user }}
 			<div>
 				<a href="https://twitter.com/{{ screen_name }}">
-					<img src="{{ user:profile_image_url }}" alt="{{ screen_name }} on Twitter">
+					<img src="{{ profile_image_url }}" alt="{{ screen_name }} on Twitter">
 					Follow Me on Twitter!
 				</a>
 				<ul>
