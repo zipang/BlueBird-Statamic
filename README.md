@@ -1,34 +1,51 @@
-# Bluebird 
-## A Twitter Plugin for Statamic CMS by Nick Snyder ([http://fasterhorses.co](http://fasterhorses.co))
+# BlueBird by [Nick Snyder](fasterhorses.co)
+## A Twitter plugin for Statamic CMS
 
-## Usage
+BlueBird is a Twitter plugin for the Statamic CMS. With BlueBird, you can pull down definite number of tweets from any user with publically available tweets. BlueBird automatically coverts hashtags, URLs, and mentions into their appropriate links. 
 
-	{{ bluebird screen_name="_FasterHorses" count="1" }}
-		{{ tweets }}
-			<div>
-				<p>{{ text }}</p>
-				<p>
-					<small>
-						<a href="{{ tweet_url }}">{{ created_at format="F jS, Y" }}</a>
-					</small>
-				</p>
-			</div>
-		{{ /tweets }}
-		{{ user }}
-			<div>
-				<a href="https://twitter.com/{{ screen_name }}">
-					<img src="{{ profile_image_url }}" alt="{{ screen_name }} on Twitter">
-					Follow Me on Twitter!
-				</a>
-				<ul>
-					<li>{{ followers_count }} Followers</li>
-					<li>Listed {{ listed_count }} times</li>
-				</ul>
-			</div>
-		{{ /user }}
-	{{ /bluebird }}
+### Support, Feature Requests, and Donations
 
-## Variables
+For support, the best way is to get at me on Twitter (fancy that): [@_FasterHorses](http://twitter.com/_FasterHorses).
+If you have any feature requests, please submit them via [BlueBird's issues page on GitHub](https://github.com/fasterhorses/BlueBird-Statamic/issues)
+Did you find this plugin useful? [Please consider donating](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UNPDS7DYBV53G).
+
+### Example Code Block
+
+    {{ bluebird screen_name="_FasterHorses" count="1" }}
+			{{ tweets }}
+				<div>
+					<p>{{ text }}</p>
+					<p>
+						<small>
+							<a href="{{ tweet_url }}">{{ created_at format="F jS, Y" }}</a>
+						</small>
+					</p>
+				</div>
+			{{ /tweets }}
+			{{ user }}
+				<div>
+					<a href="https://twitter.com/{{ screen_name }}">
+						<img src="{{ profile_image_url }}" alt="{{ screen_name }} on Twitter">
+						Follow Me on Twitter!
+					</a>
+					<ul>
+						<li>{{ followers_count }} Followers</li>
+						<li>Listed {{ listed_count }} times</li>
+					</ul>
+				</div>
+			{{ /user }}
+    {{ /bluebird }}
+
+### Documentation
+
+**Parameters**
+
+* screen_name (required) - Screen name of the user who's tweets you'd like to display; no @ symbol, please.
+* count - Number of tweets you'd like to display *Default: 5*
+* include_rts - Option to include retweets as part of your count *Default: true*
+* include_entities - Option to automatically convert entities into live links *Default: true*
+
+**Tag Pairs & Variables**
 
 BlueBird contains two tag pairs: {{ tweets }} and {{ user }}.
 
@@ -82,5 +99,12 @@ The {{ user }} tag pair allows you to return just user data without displaying t
 * {{ profile_image_url }} - URL of the user's profile image
 
 
+### MIT License
 
+Copyright (c) 2013 Nick Snyder
 
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
