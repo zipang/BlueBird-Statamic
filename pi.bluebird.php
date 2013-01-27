@@ -29,12 +29,12 @@ class Plugin_bluebird extends Plugin {
 					foreach ($tweets as $tweet) {
 					
 						$tweetText = $tweet['text'];
-
-							$entityUrl = $tweet['entities']['urls'];
-							$entityHash = $tweet['entities']['hashtags'];
-							$entityUser = $tweet['entities']['user_mentions'];
 							
-							if (!empty($entityUrl) || !empty($entityHash) || !empty($entityUser)) {
+							if (!empty($tweet['entities']['urls']) || !empty($tweet['entities']['hashtags']) || !empty($tweet['entities']['user_mentions'])) {
+								
+								$entityUrl = $tweet['entities']['urls'];
+								$entityHash = $tweet['entities']['hashtags'];
+								$entityUser = $tweet['entities']['user_mentions'];
 							
 								foreach ($entityUrl as $url) {
 									$find = $url['url'];
