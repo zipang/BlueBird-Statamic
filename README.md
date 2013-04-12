@@ -1,7 +1,9 @@
 # BlueBird by [Nick Snyder](fasterhorses.co)
 ## A Twitter plugin for Statamic CMS
 
-BlueBird is a Twitter plugin for the Statamic CMS. With BlueBird, you can pull down a predefined number of tweets from any user with publically available tweets. BlueBird automatically coverts hashtags, URLs, and mentions into their appropriate links. 
+BlueBird is a Twitter API 1.1 plugin for the Statamic CMS. With BlueBird, you can pull down a predefined number of tweets from any user with publically available tweets. BlueBird automatically coverts hashtags, URLs, and mentions into their appropriate links. 
+
+To get started, simply upload the folders to the appropriate directories. If you haven't registered for a Twitter API, you may [do so here](http://dev.twitter.com). After you obtain your Access Token, Access Token Secret, Consumer Key, and Consumer Secret, add them to "_config/add-ons/bluebird.yaml". That's it!
 
 ### Support, Feature Requests, and Donations
 
