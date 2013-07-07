@@ -16,10 +16,10 @@ class Plugin_bluebird extends Plugin {
 		$bbConfig['access_token_secret'] = $this->fetch('access_token_secret', null, null, false, false);
 		$bbConfig['consumer_key'] = $this->fetch('consumer_key', null, null, false, false);
 		$bbConfig['consumer_secret'] = $this->fetch('consumer_secret', null, null, false, false);
-	    $count  = $this->fetch_param('count', 5, 'is_numeric');
-      $screen_name = $this->fetch_param('screen_name', null);
-      $include_rts  = $this->fetch_param('include_rts', true);
-      $include_entities  = $this->fetch_param('$include_entities', true);
+	    $count  = $this->fetchParam('count', 5, 'is_numeric');
+      $screen_name = $this->fetchParam('screen_name', null);
+      $include_rts  = $this->fetchParam('include_rts', true);
+      $include_entities  = $this->fetchParam('$include_entities', true);
     
 	       
 			function buildBaseString($baseURI, $method, $params) {
