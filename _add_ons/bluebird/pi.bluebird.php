@@ -3,10 +3,12 @@
 class Plugin_bluebird extends Plugin {
 
 	var $meta = array(
-		'name'       => 'Blue Bird',
-		'version'    => '1.0',
-		'author'     => 'Nick Snyder',
-		'author_url' => 'http://fasterhorses.co'
+		'name'      	=> 'Blue Bird',
+		'version'    	=> '1.1',
+		'author'     	=> 'Nick Snyder',
+		'author_url' 	=> 'http://fasterhorses.co',
+		'contributor'   => 'MikeNGarrett',
+		'contributor_url'  => 'http://redgarrett.com'
 	);
 
 	public function index() {
