@@ -11,7 +11,11 @@ class Plugin_bluebird extends Plugin {
     
     public function index() {
     	
-    	$bbConfig = Spyc::YAMLLoad('_config/add-ons/bluebird.yaml');
+		$bbConfig = array();
+		$bbConfig['access_token'] = $this->fetch('access_token', null, null, false, false);
+		$bbConfig['access_token_secret'] = $this->fetch('access_token_secret', null, null, false, false);
+		$bbConfig['consumer_key'] = $this->fetch('consumer_key', null, null, false, false);
+		$bbConfig['consumer_secret'] = $this->fetch('consumer_secret', null, null, false, false);
 	    $count  = $this->fetch_param('count', 5, 'is_numeric');
       $screen_name = $this->fetch_param('screen_name', null);
       $include_rts  = $this->fetch_param('include_rts', true);
