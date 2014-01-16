@@ -43,7 +43,7 @@ class Plugin_bluebird extends Plugin {
 			return $r;
 		}
 
-		$url = "http://api.twitter.com/1.1/statuses/user_timeline.json";
+		$url = "https://api.twitter.com/1.1/statuses/user_timeline.json";
 
 		$query = array(
 			'count' => $count,
@@ -120,13 +120,13 @@ class Plugin_bluebird extends Plugin {
 
 					foreach ($entityHash as $hashtag) {
 						$find = '#'.$hashtag['text'];
-						$replace = '<a href="http://twitter.com/#!/search/%23'.$hashtag['text'].'">'.$find.'</a>';
+						$replace = '<a href="https://twitter.com/#!/search/%23'.$hashtag['text'].'">'.$find.'</a>';
 						$tweetText = str_replace($find, $replace, $tweetText);
 					}
 
 					foreach ($entityUser as $user_mention) {
 						$find = "@".$user_mention['screen_name'];
-						$replace = '<a href="http://twitter.com/'.$user_mention['screen_name'].'">'.$find.'</a>';
+						$replace = '<a href="https://twitter.com/'.$user_mention['screen_name'].'">'.$find.'</a>';
 						$tweetText = str_replace($find, $replace, $tweetText);
 					}
 
