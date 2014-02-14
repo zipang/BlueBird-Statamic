@@ -22,8 +22,12 @@ class Plugin_bluebird extends Plugin {
 		$count  = $this->fetchParam('count', 5, 'is_numeric');
 		$screen_name = $this->fetchParam('screen_name', null);
 		$include_rts  = $this->fetchParam('include_rts', true);
-		$include_entities  = $this->fetchParam('$include_entities', true);
+		$exclude_replies  = $this->fetchParam('exclude_replies', false);
+		$include_entities  = $this->fetchParam('include_entities', true);
 
+
+
+exclude_replies=true
 
 		function buildBaseString($baseURI, $method, $params) {
 			$r = array();
@@ -49,6 +53,7 @@ class Plugin_bluebird extends Plugin {
 			'count' => $count,
 			'screen_name' => $screen_name,
 			'include_rts' => $include_rts,
+			'exclude_replies' => $exclude_replies,
 			'include_entities' => $include_entities
 		);
 
