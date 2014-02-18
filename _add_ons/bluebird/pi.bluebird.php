@@ -4,7 +4,7 @@ class Plugin_bluebird extends Plugin {
 
 	var $meta = array(
 		'name'      	=> 'Blue Bird',
-		'version'    	=> '1.1',
+		'version'    	=> '1.2',
 		'author'     	=> 'Nick Snyder',
 		'author_url' 	=> 'http://fasterhorses.co',
 		'contributor'   => 'MikeNGarrett',
@@ -22,13 +22,10 @@ class Plugin_bluebird extends Plugin {
 		$count  = $this->fetchParam('count', 5, 'is_numeric');
 		$screen_name = $this->fetchParam('screen_name', null);
 		$include_rts  = $this->fetchParam('include_rts', true);
-		$exclude_replies  = $this->fetchParam('exclude_replies', false);
 		$include_entities  = $this->fetchParam('include_entities', true);
-
-
-
-exclude_replies=true
-
+		$exclude_replies  = $this->fetchParam('exclude_replies', false);
+		
+		
 		function buildBaseString($baseURI, $method, $params) {
 			$r = array();
 			ksort($params);
@@ -48,15 +45,24 @@ exclude_replies=true
 		}
 
 		$url = "https://api.twitter.com/1.1/statuses/user_timeline.json";
-
-		$query = array(
-			'count' => $count,
-			'screen_name' => $screen_name,
-			'include_rts' => $include_rts,
-			'exclude_replies' => $exclude_replies,
-			'include_entities' => $include_entities
-		);
-
+		
+		if ($exclude_replies == true) {
+			$query = array(
+				'count' => $count,
+				'screen_name' => $screen_name,
+				'include_rts' => $include_rts,
+				'exclude_replies' => $exclude_replies,
+				'include_entities' => $include_entities
+			);
+		} else {
+			$query = array(
+				'count' => $count,
+				'screen_name' => $screen_name,
+				'include_rts' => $include_rts,
+				'include_entities' => $include_entities
+			);
+		}
+		
 		$oauth_access_token = $bbConfig['access_token'];
 		$oauth_access_token_secret = $bbConfig['access_token_secret'];
 		$consumer_key = $bbConfig['consumer_key'];
