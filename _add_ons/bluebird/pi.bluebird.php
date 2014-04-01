@@ -29,13 +29,15 @@ class Plugin_bluebird extends Plugin {
 
 		// Check the cache before continuing. We don't want to hit the API on every request.
 		$cached_tweets = $this->cache->getYAML($screen_name);
-		// If there's a cache and it's older than our specified time, delete it. It'll be recreated later.
-		if ($cached_tweets && $this->cache->getAge($screen_name) >= $cache_length) {
-			$this->cache->delete($screen_name);
-		}
-		// There's a cache and its still new enough? Use that.
-		else {
-			return $cached_tweets;
+		if ($cached_tweets) {
+			// If there's a cache and it's older than our specified time, delete it. It'll be recreated later.
+			if ($this->cache->getAge($screen_name) >= $cache_length) {
+				$this->cache->delete($screen_name);
+			}
+			// There's a cache and its still new enough? Use that.
+			else {
+				return $cached_tweets;
+			}
 		}
 
 		function buildBaseString($baseURI, $method, $params) {
