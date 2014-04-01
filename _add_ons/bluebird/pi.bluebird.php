@@ -24,8 +24,20 @@ class Plugin_bluebird extends Plugin {
 		$include_rts  = $this->fetchParam('include_rts', true);
 		$include_entities  = $this->fetchParam('include_entities', true);
 		$exclude_replies  = $this->fetchParam('exclude_replies', false);
-		
-		
+
+		$cache_length = $this->fetchParam('cache', 60); // Cache time in seconds
+
+		// Check the cache before continuing. We don't want to hit the API on every request.
+		$cached_tweets = $this->cache->getYAML($screen_name);
+		// If there's a cache and it's older than our specified time, delete it. It'll be recreated later.
+		if ($cached_tweets && $this->cache->getAge($screen_name) >= $cache_length) {
+			$this->cache->delete($screen_name);
+		}
+		// There's a cache and its still new enough? Use that.
+		else {
+			return $cached_tweets;
+		}
+
 		function buildBaseString($baseURI, $method, $params) {
 			$r = array();
 			ksort($params);
@@ -164,7 +176,8 @@ class Plugin_bluebird extends Plugin {
 				unset($output["user"][$i]);
 			}
 
-			//birdTurd($output);
+			// Place tweets for user into their own cache file
+			$this->cache->putYAML($screen_name, $output);
 
 			return $output;
 
