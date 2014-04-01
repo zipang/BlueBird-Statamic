@@ -48,6 +48,7 @@ Did you find this plugin useful? [Please consider donating](https://www.paypal.c
 * count - Number of tweets you'd like to display *Default: 5*
 * include_rts - Option to include retweets as part of your count *Default: true*
 * include_entities - Option to automatically convert entities into live links *Default: true*
+* cache - How long to cache the API response (in seconds) *Default: 60*
 
 **Tag Pairs & Variables**
 
