@@ -1,13 +1,14 @@
-# BlueBird by [Nick Snyder](http://fasterhorses.co/)
+# BlueBird by [Nick Snyder](http://nicksnyder.is)
 ## A Twitter plugin for Statamic CMS
+## Contributions by [Jason Varga](http://pixelfear.com)
 
-BlueBird is a Twitter API 1.1 plugin for the Statamic CMS. With BlueBird, you can pull down a predefined number of tweets from any user with publically available tweets. BlueBird automatically coverts hashtags, URLs, and mentions into their appropriate links. 
+BlueBird is a Twitter API 1.1 plugin for the Statamic CMS. With BlueBird, you can pull down a predefined number of tweets from any user with publicly available tweets. BlueBird automatically coverts hashtags, URLs, and mentions into their appropriate links. 
 
 To get started, simply upload the folders to the appropriate directories. If you haven't registered for a Twitter API, you may [do so here](http://dev.twitter.com). After you obtain your Access Token, Access Token Secret, Consumer Key, and Consumer Secret, add them to "_config/add-ons/bluebird.yaml". That's it!
 
 ### Support, Feature Requests, and Donations
 
-For support, the best way is to get at me on Twitter (fancy that): [@_FasterHorses](http://twitter.com/_FasterHorses).
+For support, the best way is to get at me on Twitter (fancy that): [@_nicksnyder](http://twitter.com/_nicksnyder).
 
 If you have any feature requests, please submit them via [BlueBird's issues page on GitHub](https://github.com/fasterhorses/BlueBird-Statamic/issues)
 
@@ -15,7 +16,7 @@ Did you find this plugin useful? [Please consider donating](https://www.paypal.c
 
 ### Example Code Block
 
-    {{ bluebird screen_name="_FasterHorses" count="1" }}
+    {{ bluebird screen_name="_nicksnyder" count="1" }}
 			{{ tweets }}
 				<div>
 					<p>{{ text }}</p>
@@ -42,15 +43,15 @@ Did you find this plugin useful? [Please consider donating](https://www.paypal.c
 
 ### Documentation
 
-**Parameters**
+#### Parameters
 
-* screen_name (required) - Screen name of the user who's tweets you'd like to display; no @ symbol, please.
-* count - Number of tweets you'd like to display *Default: 5*
-* include_rts - Option to include retweets as part of your count *Default: true*
-* include_entities - Option to automatically convert entities into live links *Default: true*
-* cache - How long to cache the API response (in seconds) *Default: 60*
+* **screen_name**: Screen name of the user who's tweets you'd like to display; no @ symbol, please. [ *Required* ]
+* **count**: Number of tweets you'd like to display [ *Default: 5* ]
+* **include_rts**: Option to include retweets as part of your count [ *Default: true* ]
+* **include_entities**: Option to automatically convert entities into live links [ *Default: true* ]
+* **cache**: How long to cache the API response (in seconds) [ *Default: 60* ]
 
-**Tag Pairs & Variables**
+#### Tag Pairs & Variables
 
 BlueBird contains two tag pairs: {{ tweets }} and {{ user }}.
 
@@ -106,7 +107,7 @@ The {{ user }} tag pair allows you to return just user data without displaying t
 
 ### MIT License
 
-Copyright (c) 2013 Nick Snyder
+Copyright (c) 2013–2104 Nick Snyder
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
