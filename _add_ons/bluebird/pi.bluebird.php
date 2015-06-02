@@ -4,7 +4,7 @@ class Plugin_bluebird extends Plugin {
 
 	var $meta = array(
 		'name'      	=> 'Blue Bird',
-		'version'    	=> '1.2',
+		'version'    	=> '1.2.1',
 		'author'     	=> 'Nick Snyder',
 		'author_url' 	=> 'http://fasterhorses.co',
 		'contributor'   => 'MikeNGarrett',
@@ -166,7 +166,7 @@ class Plugin_bluebird extends Plugin {
 				}
 
 				$tweet['text'] = $tweetText;
-				$tweet['tweet_url'] = "https://twitter.com/" . $tweet['user']['screen_name'] . "/status/" . $tweet['id'];
+				$tweet['tweet_url'] = "https://twitter.com/" . $tweet['user']['screen_name'] . "/status/" . $tweet['id_str'];
 
 				array_push($output["tweets"], $tweet);
 				array_push($output["user"], $tweet['user']);
